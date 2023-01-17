@@ -1,0 +1,449 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+////////////////////////
+///  Base
+ 
+$color-primary: #225ea2;
+$color-primary-light: #59C1BD;
+
+$color-secondary-1:#A0E4CB;
+$color-secondary-2:#CFF5E7;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+////////////////////////
+///  Mixin
+
+@mixin itemButton{
+    color: whitesmoke;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    padding: .5rem 1.3rem;
+    border-radius: 5px;
+}
+
+
+////////////////////////
+///  Header 
+.header{
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    // position: fixed;
+    // z-index: 1;
+    
+    &__search{
+        font-size: 1.8rem;
+
+        input{
+            width: 38rem;
+            border: 1px solid gray;
+            border-radius: 13px 0 0 13px;
+            padding: 1px 10px;
+        }
+
+        button{
+            background: none;
+            border: 1px solid gray;
+            border-left: none;
+            border-radius: 0 13px 13px 0;
+            padding: 1px 6px;
+
+            i{
+              opacity: .7;
+            }
+        }
+    }
+    &__logoImage{
+        height: 5rem;
+        border-radius: 1rem;
+        opacity: .8;
+    }
+
+    &__list{
+        list-style: none;
+        display: flex;
+        margin-bottom: 0rem;
+    
+    }
+
+    &__listItem{
+        text-decoration: none;
+        margin: 0 1.8rem;
+        color: #252525;
+
+        &:hover{
+            color: #6ea4dd;
+            border-bottom: 1px solid #6ea4dd;
+           
+        }
+        
+    }
+
+    &__nav--1{
+    margin-right: 5rem;
+    font-size: 2rem;
+    }
+
+    .fa-cart-shopping{
+        padding: 0rem 1rem;
+        color: #252525;
+
+        &:hover{
+            color: #6ea4dd
+        }
+    }
+    .login{
+        border: 1px solid #252525;
+        border-radius: 2px;
+        padding: 0 5px 5px 5px;
+        margin: 0 1rem;
+
+        &:hover{
+        color: #6ea4dd;
+        border: 1px solid #6ea4dd;
+        }
+    }
+}
+
+
+////////////////////////
+///  Main
+.mainBg{
+    background-image: url(./Images/freestocks-_3Q3tsJ01nc-unsplash.jpg);
+    height: 80vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    h1{
+        margin-bottom: 8rem;
+        padding: 5px;
+        font-size: 4.5rem;
+        color: $color-grey-light-1;
+        text-shadow: 3px 3px 8px  gray;
+        border-bottom: 3px double $color-grey-light-1;
+    }
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0;
+    font-size: 4rem;
+    font-weight: 700;
+    color: $color-primary;
+    transition: all .4s ease-in-out;
+    // backface-visibility: hidden;
+    // border: 1px solid gray;
+    &:hover{
+        transform: scale(120%);
+    }
+}
+
+////////////////////////
+///  Main item
+.MainItem{
+    .card{
+        border: 1px solid $color-primary;
+        border-radius: .8rem;
+        height: 37rem;
+        width: 30rem;
+        margin: 1rem;
+        transition: all .5s;
+        box-shadow: 2px 2px 3px rgb(136, 136, 136);
+        
+        &:hover{
+        transform: scale(1.1);
+       }
+    }
+
+    .card-img-top{
+        height: 20rem;
+        width: 20rem;
+        align-self: center;
+        margin: 1rem;
+    }
+    .btn{
+        @include itemButton;
+        background-color: $color-primary;
+    }
+    .btn2{
+        @include itemButton;
+        background-color:lighten($color-primary, 25%);
+        text-decoration: none;
+    }
+    .rating{
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-top: 1rem;
+        float: right;
+    }
+}
+
+////////////////////////
+///  Footer
+
+.footer{
+   margin-top: 5rem;
+   text-align: center;
+   background-color: rgb(212, 212, 212);
+   font-size: 1.2rem;
+   color: rgb(0, 0, 0);
+
+   &__logo-box{
+        display: inline-block;
+        overflow: hidden;
+        border-radius: 10px;
+        opacity: .8;
+        margin: 3rem;
+        
+   }
+
+   &__logo-image{
+    height: 6rem;
+   }
+
+   &__navigation {
+    border-top: 1px solid gray;
+    display: inline-block;
+    
+    }
+
+    &__list {
+        list-style: none;
+        padding-left: 0px;
+        
+    }
+
+    &__item {
+        display: inline-block;
+        padding: 1rem 1.5rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color:black;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .3s;
+        }
+
+        &:hover,
+        &:active {
+            background-color:transparent;
+            transform: rotate(4deg) scale(1.3);
+            color:$color-primary ;
+        }
+    }
+
+    &__copyright {
+        border-top: 1px solid gray;
+        padding-top: 1rem;
+        width: 80%;
+        float: right;
+        margin-right: 8rem;
+    }
+}
+
+/////////////////////////////
+/// About
+
+.about{
+    background-image: url(./Images/about.jpg);
+    background-size: cover;
+    background-position:top;
+    color:#bc896d;
+    font-weight: 500;
+    margin: 7rem 9rem;
+    font-size: 1.5rem;
+    height: 68vh;
+
+    display: flex;
+    padding: 7rem 7rem;
+    justify-content: center;
+    align-items: center;
+
+    &__main{
+    display: flex;
+    }
+
+    &__first{
+    border: 1rem solid #c83c47;
+    padding: 3rem;
+    }
+
+    &__second{
+    margin: 5rem;
+    }
+}  
+
+/////////////////////////////
+/// spinner
+
+.spinner{
+     text-align: center;
+     font-size: 2rem;
+     font-weight: 500;
+     color: rgb(182, 0, 0);
+}
+
+/////////////////////////////
+/// login form
+
+.loginForm{
+    margin: auto;    
+    width: 35rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 1px solid #676767;
+    border-radius: 7px;
+    font-size: 1.5rem;
+
+    .form-control{
+        width: 30rem;
+        height: 3rem;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+    
+    .btn-primary{
+        margin: 5px 0;
+        font-size: 1.5rem;
+        padding: 2px 12px;
+        border-radius: 5px;
+    }
+}
+
+/////////////////////////////
+/// pagination
+
+.pagination{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4rem;
+    
+    button{
+        font-size: 1.4rem;
+        padding: 3px 10px;
+        border-radius: 4px;
+        background-color:#0D4C92;
+        color: #f9f7f6;
+    }
+}
+
+/////////////////////////////
+/// cartContainer
+
+.cartContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 17rem;
+
+    &__body{
+        height: 74vh;
+        background-color: #f9f7f6c7;
+        width: 64rem;
+        box-shadow: 2px 2px 8px #9a9a9a5c, -1px -1px 8px #9a9a9a5c;
+        overflow:auto;
+        border-radius: 5px;
+    }
+
+    &__body--1{
+       max-width: 540px;
+       margin: 3rem;
+       display: flex;
+       flex-direction: column;
+       border-radius: 8px;
+    }
+
+    &__body--image{
+        width: 8rem;
+        height:8rem;
+        margin: 2.7rem 5rem;
+    }
+
+    &__total{
+        border-radius: 5px;
+        color: #343434;
+        background-color: #f9f7f6c7;
+        width: 27vw;
+        box-shadow: 2px 2px 8px #9a9a9a5c, -1px -1px 8px #9a9a9a5c;
+
+
+        &--1{
+            padding: 3rem;
+        }
+        
+     .checkoutBtn{
+        color: whitesmoke;
+        font-size: 1.4rem;
+        border:1px solid gray;
+        border-radius: 5px;
+        padding: .4rem 1rem;
+        background-color: $color-primary;
+     }   
+    }
+///////////////////////////
+/// icon
+
+    .icon{
+        font-size: 1.5rem;
+        display: flex;
+        margin-top: 10px;
+
+        &__value{
+            border: 1px solid gray;
+            padding: 0px 14px;
+        }
+
+        i{
+            padding: 5px 6px;
+            cursor: pointer;
+
+            &:hover{
+                color: #e11b1b;
+            }
+        }
+        .fa-trash{
+            margin-left: 21rem;
+        }
+    }
+}
+.emptyCart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top:10rem;
+    
+    img{
+        margin: 2rem;
+        height: 17rem;
+        width: 18rem;
+        border-radius: 50%;
+        filter: grayscale(1);
+    }
+
+    p{
+        font-size: 1.3rem;
+    }
+}
