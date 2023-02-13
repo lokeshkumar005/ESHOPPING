@@ -24,7 +24,7 @@ function Cart() {
       <div className="cartContainer">
         <div className="cartContainer__body">
           {cart.map((item, index) => {
-            item.quantity = item.quantity;
+            const quantity = item.quantity;
             // if (item.quantity === 0) {
             //   return [];
             // }
@@ -50,7 +50,7 @@ function Cart() {
                           className="fa-solid fa-indian-rupee-sign"
                           style={{ fontSize: "1.1rem" }}
                         ></i>{" "}
-                        {item.quantity * item.price.toFixed(0) * 20}
+                        {quantity * item.price.toFixed(0) * 20}
                       </h5>
                       <div className="icon">
                         <i
@@ -62,7 +62,7 @@ function Cart() {
                           }}
                           className="fa-solid fa-minus"
                         ></i>
-                        <p className="icon__value">{item.quantity}</p>
+                        <p className="icon__value">{quantity}</p>
                         <i
                           onClick={() => increaseItem(item.id)}
                           className="fa-solid fa-plus"
